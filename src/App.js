@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import "./App.css";
-import styled from "styled-components";
+// import "./App.css";
+import classes from "./App.module.css";
+// import styled from "styled-components";
 import Person from "./components/Person";
 
-const StyledButton = styled.button`
-  background-color: ${props => (props.alt ? "red" : "green")};
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 10px;
-  cursor: pointer;
-  &:hover {
-    background-color: ${props => (props.alt ? "salmon" : "lightgreen")};
-    color: black;
-  }
-`;
+// const StyledButton = styled.button`
+//   background-color: ${props => (props.alt ? "red" : "green")};
+//   color: white;
+//   font: inherit;
+//   border: 1px solid blue;
+//   padding: 10px;
+//   cursor: pointer;
+//   &:hover {
+//     background-color: ${props => (props.alt ? "salmon" : "lightgreen")};
+//     color: black;
+//   }
+// `;
 
 //Class components have properties.
 //Properties are variables of a Class
@@ -85,21 +86,8 @@ class App extends Component {
 
   //renders jsx code to the DOM, checks for changes, then renders to the screen
   render() {
-    //inline styles
-    // const style = {
-    //   backgroundColor: "green",
-    //   color: "white",
-    //   font: "inherit",
-    //   border: "1px solid blue",
-    //   padding: "10px",
-    //   cursor: "pointer",
-    //   ":hover": {
-    //     backgroundColor: "lightgreen",
-    //     color: "black"
-    //   }
-    // };
-
     let persons = null;
+    let btnClasses = [classes.Button];
 
     if (this.state.showPersons) {
       persons = (
@@ -119,6 +107,9 @@ class App extends Component {
           })}
         </div>
       );
+
+      btnClasses.push(classes.Red);
+
       //Set new background style on showPersons
       // style.backgroundColor = "red";
       // style.color = "blue";
@@ -129,26 +120,27 @@ class App extends Component {
       // };
     }
 
-    const classes = [];
+    const assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push("red"); //classes = ['red']
+      assignedClasses.push(classes.red); //classes = ['red']
     }
     if (this.state.persons.length <= 1) {
-      classes.push("bold"); //classes = ["red", "bold"]
+      assignedClasses.push(classes.bold); //classes = ["red", "bold"]
     }
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <div id="p1">
           {/* class joines both array items with a space inbetween */}
-          <h1 className={classes.join(" ")}>Persons React App!</h1>
+          <h1 className={assignedClasses.join(" ")}>Persons React App!</h1>
 
-          <StyledButton
+          <button
+            className={btnClasses.join(" ")}
             alt={this.state.showPersons}
             onClick={this.togglePersonsHandler}
           >
             Toggle Persons
-          </StyledButton>
+          </button>
 
           {/* Conditional content  */}
           {persons}

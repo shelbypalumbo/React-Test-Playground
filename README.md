@@ -6,6 +6,9 @@ In this application, App.js is the main container component, housing the Class C
 
 App_2 is an example of a Functional Component/ STATEFUL / SMART COMPONENT.
 
-Radium is used to allow inline styles with pseudo selectors and media queries.
+Radium: https://www.npmjs.com/package/radium
+Radium is used to allow inline styles with pseudo selectors, such as hover effects and media queries.
 
-Styled components Library styled.components.com
+Styled components Library: https://styled-components.com/docs/basics#styling-any-component
+
+CSS Modules: https://github.com/css-modules/css-modules
