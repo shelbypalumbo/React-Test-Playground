@@ -1,6 +1,6 @@
 # Description
 
-This application is a React playground from Udemys "React - The Complete Guide (incl Hooks, React Router, Redux)
+This is simply a React playground from Udemys "React - The Complete Guide (incl Hooks, React Router, Redux)
 
 In this application, App.js is the main container component, housing the Class Component "App". This component uses state, event listeners that alter state, dynamic content, and dynamic styling.
 
