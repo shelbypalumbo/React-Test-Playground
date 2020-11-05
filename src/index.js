@@ -1,16 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-// import App2 from "./App_2";
+// import "./index.css";
+import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
-// import Person from "./components/Person";
 
 //Single page app
 //What to render, Where to render it
 ReactDOM.render(
   // <React.StrictMode>
-  <App />,
+  <App appTitle="Person Manager" />,
   // <App2 />,
   // </React.StrictMode>
   document.getElementById("root")

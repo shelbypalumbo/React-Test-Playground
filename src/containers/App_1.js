@@ -2,7 +2,8 @@ import React, { Component } from "react";
 // import "./App.css";
 import classes from "./App.module.css";
 // import styled from "styled-components";
-import Person from "./components/Person";
+import Person from "../components/PersonsList/Person";
+// import ErrorBoundary from "./components/ErrorBoundary";
 
 // const StyledButton = styled.button`
 //   background-color: ${props => (props.alt ? "red" : "green")};
@@ -96,6 +97,8 @@ class App extends Component {
           {/* 'map' maps out every element in a given array into somethign else, by executing a method on every element */}
           {this.state.persons.map((person, index) => {
             return (
+              //key has to be on the outer element
+              // <ErrorBoundary key={person.id}>
               <Person
                 key={person.id}
                 name={person.name}
@@ -103,6 +106,7 @@ class App extends Component {
                 click={() => this.deletePersonHandler(index)}
                 changed={event => this.nameChangedHandler(event, person.id)}
               />
+              // </ErrorBoundary>
             );
           })}
         </div>

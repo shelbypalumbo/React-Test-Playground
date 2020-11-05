@@ -18,6 +18,7 @@ import classes from "./style.module.css";
 //ES6 FUNCTIONAL COMPONENT SYNTAX
 //Presentational / Dumb Component / Stateless Component
 const Person = props => {
+  console.log("Person.js, rendering...");
   return (
     <div className={classes.Person}>
       <h1 onClick={props.click}>I'm {props.name}</h1>
